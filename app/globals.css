@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #131416;
+  --color-accent: #0ab0bc;
+}
+
+body {
+  background: linear-gradient(180deg, #000000 0%, #333333 100%);
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #0ff, #f0f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-cyan {
+  filter: brightness(0) invert(1) drop-shadow(0 0 10px #0ff) drop-shadow(0 0 15px #0ff);
+}
+
+::selection {
+  background: rgba(10, 176, 188, 0.7);
+  color: white;
+}
+
+// Grain noise overlay
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: url('/textures/grain.png');
+  opacity: 0.1;
+}
